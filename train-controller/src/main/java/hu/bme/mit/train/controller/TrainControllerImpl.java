@@ -10,11 +10,10 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
-
-	Timer t;
-
+	
 	public TrainControllerImpl()
-	{
+	{		
+		Timer t;
 		t = new Timer();
 		t.schedule(new TimerTask() {
 			public void run()
