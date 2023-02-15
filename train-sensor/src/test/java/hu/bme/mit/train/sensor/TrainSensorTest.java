@@ -61,5 +61,14 @@ public class TrainSensorTest {
         when(mockTrainController.getReferenceSpeed()).thenReturn(50);
         impl.overrideSpeedLimit(550);
         verify(mockTrainUser, times(1)).setAlarmState(true);
+        Assert.assertEquals(550, impl.getSpeedLimit());
+    }
+
+    @Test
+    // Checking whether speed limit change is applied.
+    public void changeSpeedLimit() {
+        when(mockTrainController.getReferenceSpeed()).thenReturn(180);
+        impl.overrideSpeedLimit(170);
+        Assert.assertEquals(170, impl.getSpeedLimit());
     }
 }
